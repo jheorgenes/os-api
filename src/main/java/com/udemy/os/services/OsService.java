@@ -52,8 +52,8 @@ public class OsService {
 		OS newObj = new OS();
 		newObj.setId(objDTO.getId());
 		newObj.setObservacoes(objDTO.getObservacoes());
-		newObj.setPrioridade(Prioridade.toEnum(objDTO.getPrioridade())); //Pega o Integer do DTO e chama o Método estático para fazer a conversão para o Enum
-		newObj.setStatus(Status.toEnum(objDTO.getStatus()));
+		newObj.setPrioridade(Prioridade.toEnum(objDTO.getPrioridade().getCod())); //Pega o Integer do DTO e chama o Método estático para fazer a conversão para o Enum
+		newObj.setStatus(Status.toEnum(objDTO.getStatus().getCod()));
 		
 		Tecnico tec = tecnicoService.findById(objDTO.getTecnico()); //Buscando no banco pelo ID obtido do TecnicoDTO
 		Cliente cli = clienteService.findById(objDTO.getCliente()); //Buscando no banco pelo ID obtido do ClienteDTO
